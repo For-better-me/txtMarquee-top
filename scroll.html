@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+		
+	  }
+	.box{
+		width:300px;
+		height:250px;
+		border:#999 solid 3px;
+		overflow:hidden;
+		}
+	#music{
+			overflow:hidden;  /*必不可少；*/
+			width:300px;       /* width,height 的设置也不可少*/
+			height:174px;
+		}
+	#hang{
+		width:100%;
+		height:76px;
+		background:#C00;
+		text-align:center;
+		color:#FF0;
+		font-family:'微软雅黑';
+		font-size:42px;
+		overflow:hidden;
+		}
+	ul{
+		list-style:none;
+		}
+	ul li {
+			line-height:25px;
+			color:#000;
+			text-align:center;
+			text-decoration:none;
+			}
+	ul li a{
+			color:#000;
+			text-decoration:none;
+	
+			}
+</style>
+
+</head>
+
+<body>
+<div class="box">
+	<div id="hang">Music
+    </div>
+    <div id="music">
+    	<ul id="con1">
+    	<li><a href="#">然后怎样</a></li>
+        <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Eason Chen</a></li>
+        <li><a href="#">完成了所谓的理想</a></li>
+        <li><a href="#">放纵了情绪的泛滥</a></li>
+        <li><a href="#">汗都流干 天都微亮</a></li>
+        <li><a href="#">然后怎样</a> </li>
+        <li><a href="#">拥有了旅行的空档</a></li>
+        <li><a href="#">却遗失流浪的背囊</a></li>
+        <li><a href="#">沿着轨道 一直流浪</a></li>
+        <li><a href="#"> 然后怎样</a></li>
+        </ul>
+        <ul id="con2"></ul>
+    </div>
+</div>
+<script type="text/javascript">
+ var area = document.getElementById('music');
+ var con1 = document.getElementById('con1');
+ var con2 = document.getElementById('con2');
+ var speed = 50;
+ area.scrollTop = 0;
+ con2.innerHTML = con1.innerHTML;
+ function scrollUp(){
+	 if(area.scrollTop >= con1.offsetHeight)
+	   {
+		 area.scrollTop = 0;
+		 }
+	else{
+		   area.scrollTop++; 
+		 } 
+}
+var myScroll = setInterval(scrollUp,speed);
+area.onmouseover = function(){
+	 clearInterval(myScroll);
+	}
+area.onmouseout = function(){
+	 myScroll = setInterval("scrollUp()",speed);
+	}
+ </script>
+</body>
+</html>
